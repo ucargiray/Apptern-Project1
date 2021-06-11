@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="x5V-Nm-Agb">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Splash View Controller-->
+        <scene sceneID="fZK-wR-JdK">
+            <objects>
+                <viewController id="uNk-nO-mhb" customClass="SplashViewController" customModule="appcent_project1" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bcf-mu-HCC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="Ncz-FV-6cg">
+                                <rect key="frame" x="49" y="288" width="316" height="358.5"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" image="openingPlane" translatesAutoresizingMaskIntoConstraints="NO" id="hWA-2P-kxS">
+                                        <rect key="frame" x="0.0" y="0.0" width="316" height="283.5"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flight App" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GBD-dX-PLp">
+                                        <rect key="frame" x="0.0" y="302.5" width="316" height="56"/>
+                                        <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="40"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="je5-Kv-qkx"/>
+                        <color key="backgroundColor" name="openingColor"/>
+                        <constraints>
+                            <constraint firstItem="Ncz-FV-6cg" firstAttribute="top" secondItem="je5-Kv-qkx" secondAttribute="top" constant="200" id="1rt-da-11Z"/>
+                            <constraint firstItem="je5-Kv-qkx" firstAttribute="trailing" secondItem="Ncz-FV-6cg" secondAttribute="trailing" constant="49" id="gmf-tR-QGh"/>
+                            <constraint firstItem="Ncz-FV-6cg" firstAttribute="height" secondItem="bcf-mu-HCC" secondAttribute="height" multiplier="0.4" id="j2X-6Z-Qg8"/>
+                            <constraint firstItem="Ncz-FV-6cg" firstAttribute="leading" secondItem="je5-Kv-qkx" secondAttribute="leading" constant="49" id="jTb-yg-dun"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="km1-VC-Gcz"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Sho-wo-xnh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1752.1739130434785" y="227.67857142857142"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="hm9-5Z-Q5M">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="x5V-Nm-Agb" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="SmS-tf-2CA">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="uNk-nO-mhb" kind="relationship" relationship="rootViewController" id="k8r-Ey-gjh"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GMc-Oa-1d6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="842.02898550724649" y="227.67857142857142"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="openingPlane" width="138" height="82"/>
+        <namedColor name="openingColor">
+            <color red="0.10588235294117647" green="0.33725490196078434" blue="0.68235294117647061" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+    </resources>
+</document>
