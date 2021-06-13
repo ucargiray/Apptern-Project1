@@ -85,9 +85,8 @@ extension FlightListViewController : UITableViewDelegate , UITableViewDataSource
         if let flightDetailVC = flightDetailVCStoryboard.instantiateInitialViewController() as? FlightDetailViewController {
             if let flightsData = flights?.data {
                 flightDetailVC.flight = flightsData[indexPath.section]
+                self.navigationController?.pushViewController(flightDetailVC, animated: true)
             }
-            
-            self.navigationController?.pushViewController(flightDetailVC, animated: true)
         }
     }
     
