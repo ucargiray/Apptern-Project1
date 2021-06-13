@@ -24,6 +24,12 @@
 		C2675DFE26713C8A0088E8EC /* FlightsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2675DFD26713C8A0088E8EC /* FlightsTableViewCell.swift */; };
 		C2675E0F26724BCB0088E8EC /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2675E0E26724BCB0088E8EC /* ViewExtension.swift */; };
 		C2675E142672AA620088E8EC /* FlightListViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2675E132672AA620088E8EC /* FlightListViewController.storyboard */; };
+		C2754EEE26762FB800236081 /* Departure.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2754EED26762FB800236081 /* Departure.swift */; };
+		C2754EF126762FC900236081 /* Arrival.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2754EF026762FC900236081 /* Arrival.swift */; };
+		C2754EF426762FDB00236081 /* Airline.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2754EF326762FDB00236081 /* Airline.swift */; };
+		C2754EF726762FE600236081 /* Flight.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2754EF626762FE600236081 /* Flight.swift */; };
+		C2754EFA2676300800236081 /* Pagination.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2754EF92676300800236081 /* Pagination.swift */; };
+		C2754EFE2676303E00236081 /* FlightData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2754EFD2676303E00236081 /* FlightData.swift */; };
 		C2C6FA832672E02500C64344 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C6FA822672E02500C64344 /* DateExtension.swift */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +53,12 @@
 		C2675DFD26713C8A0088E8EC /* FlightsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightsTableViewCell.swift; sourceTree = "<group>"; };
 		C2675E0E26724BCB0088E8EC /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
 		C2675E132672AA620088E8EC /* FlightListViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = FlightListViewController.storyboard; sourceTree = "<group>"; };
+		C2754EED26762FB800236081 /* Departure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Departure.swift; sourceTree = "<group>"; };
+		C2754EF026762FC900236081 /* Arrival.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Arrival.swift; sourceTree = "<group>"; };
+		C2754EF326762FDB00236081 /* Airline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Airline.swift; sourceTree = "<group>"; };
+		C2754EF626762FE600236081 /* Flight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flight.swift; sourceTree = "<group>"; };
+		C2754EF92676300800236081 /* Pagination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pagination.swift; sourceTree = "<group>"; };
+		C2754EFD2676303E00236081 /* FlightData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightData.swift; sourceTree = "<group>"; };
 		C2C6FA822672E02500C64344 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -80,9 +92,11 @@
 		C2675DB32670F57C0088E8EC /* appcent-project1 */ = {
 			isa = PBXGroup;
 			children = (
+				C2CB305526762B4700205176 /* Cell */,
+				C2675E0D26724BBD0088E8EC /* Extension */,
 				C2675DD32670F87B0088E8EC /* Model */,
 				C2675DC92670F5910088E8EC /* Networking */,
-				C2675DCA2670F5970088E8EC /* View */,
+				C2675DCA2670F5970088E8EC /* ViewController */,
 				C2675DB42670F57C0088E8EC /* AppDelegate.swift */,
 				C2675DB62670F57C0088E8EC /* SceneDelegate.swift */,
 				C2675DBD2670F5840088E8EC /* Assets.xcassets */,
@@ -101,16 +115,15 @@
 			path = Networking;
 			sourceTree = "<group>";
 		};
-		C2675DCA2670F5970088E8EC /* View */ = {
+		C2675DCA2670F5970088E8EC /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				C2675E0D26724BBD0088E8EC /* Extension */,
 				C2675DE026710CD70088E8EC /* FlightDetail */,
 				C2675DF126711A130088E8EC /* FlightList */,
 				C2675DE82671194E0088E8EC /* Login */,
 				C2675DCE2670F5B50088E8EC /* Main */,
 			);
-			path = View;
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		C2675DCE2670F5B50088E8EC /* Main */ = {
@@ -126,6 +139,12 @@
 			isa = PBXGroup;
 			children = (
 				C2675DD82670F8960088E8EC /* FlightResponseModel.swift */,
+				C2754EED26762FB800236081 /* Departure.swift */,
+				C2754EF026762FC900236081 /* Arrival.swift */,
+				C2754EF326762FDB00236081 /* Airline.swift */,
+				C2754EF626762FE600236081 /* Flight.swift */,
+				C2754EF92676300800236081 /* Pagination.swift */,
+				C2754EFD2676303E00236081 /* FlightData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -151,7 +170,6 @@
 		C2675DF126711A130088E8EC /* FlightList */ = {
 			isa = PBXGroup;
 			children = (
-				C2675DF926713BDA0088E8EC /* FlightListTableViewCell */,
 				C2675DF326711C520088E8EC /* FlightListViewController.swift */,
 				C2675E132672AA620088E8EC /* FlightListViewController.storyboard */,
 			);
@@ -173,6 +191,14 @@
 				C2C6FA822672E02500C64344 /* DateExtension.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		C2CB305526762B4700205176 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				C2675DF926713BDA0088E8EC /* FlightListTableViewCell */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -251,11 +277,17 @@
 				C2675DEB267119780088E8EC /* LoginViewController.swift in Sources */,
 				C2C6FA832672E02500C64344 /* DateExtension.swift in Sources */,
 				C2675DB92670F57C0088E8EC /* SplashViewController.swift in Sources */,
+				C2754EF426762FDB00236081 /* Airline.swift in Sources */,
+				C2754EF126762FC900236081 /* Arrival.swift in Sources */,
+				C2754EF726762FE600236081 /* Flight.swift in Sources */,
 				C2675DD92670F8960088E8EC /* FlightResponseModel.swift in Sources */,
+				C2754EEE26762FB800236081 /* Departure.swift in Sources */,
+				C2754EFA2676300800236081 /* Pagination.swift in Sources */,
 				C2675DB52670F57C0088E8EC /* AppDelegate.swift in Sources */,
 				C2675DB72670F57C0088E8EC /* SceneDelegate.swift in Sources */,
 				C2675DDE26710B0D0088E8EC /* FlightAPI.swift in Sources */,
 				C2675E0F26724BCB0088E8EC /* ViewExtension.swift in Sources */,
+				C2754EFE2676303E00236081 /* FlightData.swift in Sources */,
 				C2675DFE26713C8A0088E8EC /* FlightsTableViewCell.swift in Sources */,
 				C2675DD02670F5D30088E8EC /* Constant.swift in Sources */,
 				C2675DF426711C520088E8EC /* FlightListViewController.swift in Sources */,

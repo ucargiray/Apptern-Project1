@@ -18,6 +18,8 @@ class LoginViewController: UIViewController {
         configureLoginButton()
         self.navigationController?.navigationBar.isHidden = true
         self.hideKeyboardWhenTappedAround()
+        self.emailTextField.delegate = self
+        self.passwordTextField.delegate = self
     }
     
     func configureLoginButton () {
@@ -72,6 +74,13 @@ class LoginViewController: UIViewController {
         UserDefaults.standard.set(true, forKey: "isUserRemember")
     }
     
-    
+}
 
+extension LoginViewController : UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
 }

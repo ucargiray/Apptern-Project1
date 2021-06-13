@@ -11,7 +11,6 @@ class FlightListViewController: UIViewController {
     
     @IBOutlet var flightsTableView: UITableView!
     
-    // REMOVE
     let cellSpacingHeight: CGFloat = 40
     
     
@@ -43,7 +42,8 @@ class FlightListViewController: UIViewController {
     
     private func getDataUsingAPI() {
         self.flightsAPI.getFlights { response in
-            DispatchQueue.main.async {
+            DispatchQueue.main.async { [weak self] in
+                guard let self = self else { return }
                 self.flights = response
                 self.flightsTableView.reloadData()
             }
@@ -59,30 +59,40 @@ class FlightListViewController: UIViewController {
 
 extension FlightListViewController : UITableViewDelegate , UITableViewDataSource {
     
-    /*
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.flights?.data?.count ?? 0
-    }
- */
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FlightsListTableViewCell") as? FlightsTableViewCell
-        let rowData = self.flights?.data?[indexPath.section]
-        cell?.configure(data: rowData!)
-        return cell!
+        if let cell = cell {
+            if let flight = flights , let rowData = flight.data {
+                let data = rowData[indexPath.section]
+                cell.configure(data: data)
+                return cell
+            }
+            else {
+                let cell = UITableViewCell()
+                cell.textLabel?.text = "Loading..."
+                return cell
+            }
+        }else {
+            let cell = UITableViewCell()
+            cell.textLabel?.text = "Loading..."
+            return cell
+        }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let flightDetailVCStoryboard = UIStoryboard(name: "FlightDetailViewController", bundle: nil)
         if let flightDetailVC = flightDetailVCStoryboard.instantiateInitialViewController() as? FlightDetailViewController {
-            flightDetailVC.flight = self.flights!.data![indexPath.section]
+            if let flightsData = flights?.data {
+                flightDetailVC.flight = flightsData[indexPath.section]
+            }
             
             self.navigationController?.pushViewController(flightDetailVC, animated: true)
         }
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return self.flights?.data!.count ?? 0
+        return self.flights?.data!.count ?? 3
         }
         
         func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

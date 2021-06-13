@@ -14,6 +14,10 @@ class SplashViewController: UIViewController {
         redirectPage()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = true
+    }
+    
     func redirectPage() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
             if self.checkUserLoginStatus() {

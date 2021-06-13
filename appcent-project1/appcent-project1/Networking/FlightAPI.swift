@@ -15,11 +15,17 @@ class FlightAPI {
         let session = URLSession.shared
         session.dataTask(with: url) { data, response, error in
             if let data = data {
-                let decoder = JSONDecoder()
-                let decodedModel = try? decoder.decode(FlightResponse.self, from: data)
-                DispatchQueue.main.async {
-                    completionHandler(decodedModel!)
+                do {
+                    let decoder = JSONDecoder()
+                    let decodedModel = try decoder.decode(FlightResponse.self, from: data)
+                    DispatchQueue.main.async {
+                        completionHandler(decodedModel)
+                    }
                 }
+                catch {
+                    print(error)
+                }
+                
             } else {
                 print("Data gelmedi")
             }
