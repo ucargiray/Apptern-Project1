@@ -31,7 +31,6 @@ class LoginViewController: UIViewController {
         let flightListStoryboard = UIStoryboard(name: "FlightListViewController", bundle: nil)
         if let flightListVC = flightListStoryboard.instantiateInitialViewController() as? FlightListViewController {
             self.navigationController?.pushViewController(flightListVC, animated: true)
-            UIApplication.shared.windows.first?.rootViewController = UINavigationController(rootViewController: flightListVC)
         }
     }
     
